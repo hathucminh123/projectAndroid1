@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "271073949531",
+    "project_id": "gundam-f3694",
+    "storage_bucket": "gundam-f3694.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271073949531:android:cb511fef24441ae1a58c7e",
+        "android_client_info": {
+          "package_name": "com.example.ecommerceapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNsoSgIrpq3vEB3DsyHP6NERMiS_gtwUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271073949531:android:bc372d0037b34009a58c7e",
+        "android_client_info": {
+          "package_name": "com.example.gundam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNsoSgIrpq3vEB3DsyHP6NERMiS_gtwUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,75 @@
+package com.example.ecommerceapp.adapters;
+
+
+import com.bumptech.glide.Glide;
+import com.example.ecommerceapp.R;
+
+import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.ecommerceapp.activities.DetailedActivity;
+import com.example.ecommerceapp.models.CategoryModel;
+
+import java.util.List;
+import java.util.Locale;
+
+import com.example.ecommerceapp.activities.ShowAllActivity;
+public class CategoryAdapter  extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
+    Context context;
+   List<CategoryModel> list;
+
+    public CategoryAdapter(Context context, List<CategoryModel> list) {
+        this.context = context;
+        this.list = list;
+    }
+
+    @NonNull
+    @Override
+    public CategoryAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.category_list,parent,false));
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull CategoryAdapter.MyViewHolder holder, int position) {
+
+
+        Glide.with(context).load(list.get(position).getImg_url()).into(holder.catImg);
+holder.carName.setText(list.get(position).getName());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context, ShowAllActivity.class);
+                intent.putExtra("type",list.get(position).getType());
+                context.startActivity(intent);
+            }
+        });
+
+
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
+ImageView catImg;
+TextView carName;
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            catImg=itemView.findViewById(R.id.cat_img);
+            carName=itemView.findViewById(R.id.cat_name);
+        }
+    }
+}
+
